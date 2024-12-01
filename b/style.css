@@ -2,6 +2,10 @@ html, body {
     height: 100%;
 }
 
+body, .section a {
+    font-family: 'Press Start 2P', sans-serif; /* Pixel-style font */
+}
+
 body {
     margin: 0;
     font-family: Arial, sans-serif;
@@ -22,17 +26,17 @@ body {
 .box {
     position: relative;
     background: url('assets/box.png') no-repeat center center;
-    background-size: cover;
-    height: 150px;
+    background-size: contain;
+    width: 175px;
+    height: 175px;
     display: flex;
-    align-items: center;
+    align-items: flex-end;
     justify-content: center;
     font-size: 24px;
     font-weight: bold;
     color: white;
     cursor: pointer;
-    border: 2px solid white;
-    border-radius: 10px;
+    padding-bottom: 100px; /* Add padding to create space between text and bottom of the box */
 }
 
 .box.locked {
@@ -46,7 +50,7 @@ body {
     flex-direction: column; /* Stack children vertically */
     align-items: center;    /* Center children horizontally */
     justify-content: center; /* Center children vertically */
-    background: url('assets/background_page.png') no-repeat center center fixed;
+    background: url('assets/background.png') no-repeat center center fixed;
     background-size: cover;
     padding: 20px;
     text-align: center;
@@ -54,11 +58,9 @@ body {
 }
 
 .section {
-    width: 50%;
-    height: 20%;
+    width: 80%;
+    height: 30%;
     margin: 20px 0; /* Space between sections */
-    border: 2px solid white;
-    border-radius: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -66,7 +68,7 @@ body {
     font-weight: bold;
     text-align: center;
     background: url('assets/box_section.png') no-repeat center center;
-    background-size: cover;
+    background-size: contain;
     color: white;
     position: relative;
     overflow: hidden;
@@ -98,22 +100,20 @@ body {
     justify-content: center;
     height: 100%; /* Fill the viewport */
     text-align: center;
-    background: url('../assets/invalid-bg.png') no-repeat center center; /* Custom background */
-    background-size: cover;
+    background: url('../assets/background.png') no-repeat center center; /* Custom background */
+    background-size: contain;
     color: white;
 }
 
 /* Style for the invalid message section */
 .invalid-message {
-    width: 60%;
-    height: 20%;
-    border: 2px solid white;
-    border-radius: 10px;
+    width: 100%;
+    height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 18px;
     font-weight: bold;
-    background: rgba(0, 0, 0, 0.7); /* Optional semi-transparent background */
-    padding: 20px;
+    background: url('assets/box_section.png') no-repeat center center;
+    padding: 10px;
 }
