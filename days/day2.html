@@ -7,13 +7,51 @@
     <link rel="stylesheet" href="../style.css">
 </head>
 <body>
-    <div class="page">
+    <div class="page" id="valid-content">
         <div class="section">
-            <a href="https://example.com/todays-website" target="_blank">Today's Website</a>
+            <a href="http://buildshruggie.com" target="_blank">Today's Website</a>
         </div>
         <div class="section">
-            <a href="https://spotify.com/todays-song" target="_blank">Today's Song</a>
+            <a href="https://open.spotify.com/track/1udfTOcFw07IZN7xgdPqnK?si=2c70b71f852a496d" target="_blank">Today's Song</a>
         </div>
     </div>
+
+    <!-- Message for invalid dates -->
+    <div class="page invalid" id="invalid-content" style="display: none;">
+        <div class="section invalid-message">
+            <p>You can't open this page yet. Come back on the correct day!</p>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            // Extract the day number (replace with dynamic logic if needed)
+            const dayNumber = parseInt(document.title.match(/\d+/)[0], 10); // e.g., "Day 5" => 5
+
+            // Get the current date
+            const today = new Date();
+            const currentDay = today.getDate();
+            const currentMonth = today.getMonth() + 1; // Months are zero-indexed
+            const currentYear = today.getFullYear();
+
+            // Check if the date is valid
+            const isValidDate =
+                currentYear === 2024 &&
+                currentMonth === 12 &&
+                currentDay >= dayNumber;
+
+            // Show or hide content based on validity
+            const validContent = document.getElementById("valid-content");
+            const invalidContent = document.getElementById("invalid-content");
+
+            if (isValidDate) {
+                validContent.style.display = "flex";
+                invalidContent.style.display = "none";
+            } else {
+                validContent.style.display = "none";
+                invalidContent.style.display = "flex";
+            }
+        });
+    </script>
 </body>
 </html>

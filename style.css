@@ -41,36 +41,79 @@ body {
 }
 
 .page {
-    height: 100%;
-    text-align: center;
+    height: 100vh; /* Use full viewport height */
+    display: flex;
+    flex-direction: column; /* Stack children vertically */
+    align-items: center;    /* Center children horizontally */
+    justify-content: center; /* Center children vertically */
     background: url('assets/background_page.png') no-repeat center center fixed;
     background-size: cover;
-    padding: 50px;
+    padding: 20px;
+    text-align: center;
     color: white;
 }
 
 .section {
     width: 50%;
     height: 20%;
-    margin: 20px auto;
+    margin: 20px 0; /* Space between sections */
+    border: 2px solid white;
     border-radius: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 18px;
-    color: white;
     font-weight: bold;
     text-align: center;
     background: url('assets/box_section.png') no-repeat center center;
     background-size: cover;
+    color: white;
+    position: relative;
+    overflow: hidden;
 }
 
-a {
-    color: white;
+/* Anchor tag should fill the entire section */
+.section a {
+    display: block;
+    width: 100%;
+    height: 100%;
     text-decoration: none;
+    color: inherit;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     font-weight: bold;
 }
 
-a:hover {
+/* Hover effect for the entire section */
+.section a:hover {
     text-decoration: underline;
+}
+
+
+/* Style for the invalid date page */
+.invalid {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%; /* Fill the viewport */
+    text-align: center;
+    background: url('../assets/invalid-bg.png') no-repeat center center; /* Custom background */
+    background-size: cover;
+    color: white;
+}
+
+/* Style for the invalid message section */
+.invalid-message {
+    width: 60%;
+    height: 20%;
+    border: 2px solid white;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    font-weight: bold;
+    background: rgba(0, 0, 0, 0.7); /* Optional semi-transparent background */
+    padding: 20px;
 }
